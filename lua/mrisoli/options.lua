@@ -16,4 +16,4 @@ vim.opt.backupdir = os.getenv("HOME") .. "/.config/nvim/.backup"
 vim.opt.directory = os.getenv("HOME") .. "/.config/nvim/.tmp"
 vim.opt.termguicolors = true
 
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, { command = '%s/\\s\\+$//e' })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { command = "%s/\\s\\+$//e" })
