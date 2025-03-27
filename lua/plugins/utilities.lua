@@ -2,7 +2,6 @@ return {
   "github/copilot.vim",
   "editorconfig/editorconfig-vim",
   "tpope/vim-fugitive",
-  { "ggandor/leap.nvim", lazy = true },
 
   { "gennaro-tedesco/nvim-peekup", lazy = true },
   { "kyazdani42/nvim-tree.lua", lazy = true },
