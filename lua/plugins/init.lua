@@ -1,5 +1,4 @@
-require("lazy").setup({
-
+return {
   "github/copilot.vim",
   "editorconfig/editorconfig-vim",
   "tpope/vim-fugitive",
@@ -26,7 +25,12 @@ require("lazy").setup({
     end,
   },
 
-  { "nordtheme/vim", name = "nord" },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1001,
+    opts = {},
+  },
 
   {
     "nvim-lualine/lualine.nvim",
@@ -54,6 +58,8 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim", "sharkdp/fd" },
   },
 
+  "nvim-telescope/telescope-ui-select.nvim",
+
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -61,9 +67,4 @@ require("lazy").setup({
   },
 
   "nathangrigg/vim-beancount",
-
-  {
-    "folke/trouble.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons",
-  },
-})
+}
