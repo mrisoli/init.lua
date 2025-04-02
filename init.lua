@@ -8,4 +8,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
 vim.lsp.enable({ "ts_ls", "eslint" })

@@ -8,10 +8,10 @@ return {
   },
 
   {
-    "folke/tokyonight.nvim",
+    "rose-pine/neovim",
     lazy = false,
+    name = "rose-pine",
     priority = 1001,
-    opts = {},
   },
 
   {
