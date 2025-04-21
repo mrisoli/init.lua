@@ -8,9 +8,9 @@ return {
   },
 
   {
-    "rose-pine/neovim",
+    "dracula/vim",
     lazy = false,
-    name = "rose-pine",
+    name = "dracula",
     priority = 1001,
   },
 

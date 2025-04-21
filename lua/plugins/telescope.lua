@@ -1,8 +1,6 @@
 return {
   {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "sharkdp/fd" },
+    "ibhagwan/fzf-lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-
-  "nvim-telescope/telescope-ui-select.nvim",
 }
