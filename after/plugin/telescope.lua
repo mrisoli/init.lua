@@ -1,5 +1,0 @@
-local fzfLua = require("fzf-lua")
-vim.keymap.set("n", "ff", fzfLua.files, {})
-vim.keymap.set("n", "fg", fzfLua.live_grep, {})
-vim.keymap.set("n", "fb", fzfLua.buffers, {})
-vim.keymap.set("n", "fs", fzfLua.grep_cWORD, {})

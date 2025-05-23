@@ -4,7 +4,6 @@ return {
   "tpope/vim-fugitive",
 
   { "gennaro-tedesco/nvim-peekup", lazy = true },
-  { "kyazdani42/nvim-tree.lua", lazy = true },
   { "simrat39/symbols-outline.nvim", lazy = true },
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
@@ -21,7 +20,7 @@ return {
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
-    dependencies = {"nvim-lua/plenary.nvim"},
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
   "nathangrigg/vim-beancount",
