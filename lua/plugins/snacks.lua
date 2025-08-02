@@ -6,7 +6,9 @@ return {
     bigfile = {},
     dashboard = {},
     explorer = {},
-    image = {},
+    image = {
+      doc = { inline = false },
+    },
     input = {},
     notifier = {},
     picker = {},

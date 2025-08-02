@@ -3,14 +3,7 @@ return {
     "folke/trouble.nvim",
     lazy = true,
     cmd = "Trouble",
-    opts = {
-      modes = {
-        diagnostics = {
-          auto_open = true,
-          auto_close = true,
-        },
-      },
-    },
+    opts = {},
     keys = {
       {
         "<leader>xx",
@@ -41,16 +34,6 @@ return {
         "<leader>xQ",
         "<cmd>Trouble qflist toggle<cr>",
         desc = "Quickfix List (Trouble)",
-      },
-      {
-        "}",
-        "<cmd>Trouble next<cr>",
-        desc = "Next Diagnostic (Trouble)",
-      },
-      {
-        "{",
-        "<cmd>Trouble prev<cr>",
-        desc = "Prev Diagnostic (Trouble)",
       },
     },
   },
