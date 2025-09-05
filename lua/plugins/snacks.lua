@@ -14,7 +14,7 @@ return {
     picker = {},
     quickfile = {},
     scope = {},
-    scroll = {},
+    scroll = { enabled = false },
     statuscolumn = {},
     words = {},
   },
