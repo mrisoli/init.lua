@@ -7,11 +7,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
-vim.g.loaded_python3_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
--- vim.lsp.enable({ "vtsls" })
-vim.lsp.enable('biome')
+-- vim.g.loaded_python3_provider = 0
+-- vim.g.loaded_ruby_provider = 0
+-- vim.g.loaded_perl_provider = 0
+vim.lsp.start({ name = "biome", cmd = { "biome", "lsp-proxy" } })
+vim.lsp.start({ name = "eslint", cmd = { "eslint", "--stdio" } })
 vim.diagnostic.config({
   underline = true,
   virtual_line = true,
