@@ -10,8 +10,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
--- vim.lsp.enable({ "vtsls" })
-vim.lsp.enable({ "biome", "eslint" })
+vim.lsp.enable({ "biome", "eslint", "vtsls" })
 vim.diagnostic.config({
 	underline = true,
 	virtual_line = true,
