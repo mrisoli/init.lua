@@ -12,15 +12,15 @@ vim.opt.hlsearch = true
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.smarttab = true
-vim.opt.backupdir = os.getenv("HOME") .. "/.config/nvim/.backup"
-vim.opt.directory = os.getenv("HOME") .. "/.config/nvim/.tmp"
+vim.opt.backupdir = vim.fn.stdpath("data") .. "/backup"
+vim.opt.directory = vim.fn.stdpath("data") .. "/tmp"
 vim.opt.termguicolors = true
 
 local augroup = vim.api.nvim_create_augroup
-local eofGroup = augroup("eof", {})
+local eofGroup = augroup("eof", { clear = true })
 
 local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup("HighlightYank", {})
+local yank_group = augroup("HighlightYank", { clear = true })
 
 autocmd("TextYankPost", {
   group = yank_group,
@@ -33,7 +33,7 @@ autocmd("TextYankPost", {
   end,
 })
 
-autocmd({ "BufWritePre" }, {
+autocmd("BufWritePre", {
   group = eofGroup,
   pattern = "*",
   command = [[%s/\s\+$//e]],
