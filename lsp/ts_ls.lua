@@ -11,6 +11,6 @@ return {
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
   end,
   cmd = { "typescript-language-server", "--stdio" },
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
 }
