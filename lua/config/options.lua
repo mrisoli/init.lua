@@ -39,6 +39,6 @@ autocmd("BufWritePre", {
   command = [[%s/\s\+$//e]],
 })
 
-vim.diagnostic.config({ jump = { float = true } })
+vim.diagnostic.config({ jump = { on_jump = function() vim.diagnostic.open_float() end } })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)

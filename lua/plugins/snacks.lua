@@ -2,19 +2,25 @@ return {
   "folke/snacks.nvim",
   lazy = false,
   priority = 1000,
+  config = function(_, opts)
+    require("snacks").setup(opts)
+    vim.ui.select = Snacks.picker.select
+    Snacks.image.meta.health = false
+    Snacks.input.meta.health = false
+    Snacks.lazygit.meta.health = false
+    Snacks.scroll.meta.health = false
+  end,
   opts = {
     bigfile = {},
     dashboard = {},
     explorer = {},
-    image = {
-      doc = { inline = false },
-    },
-    input = {},
+    image = { enabled = false },
+    input = { enabled = false },
+    lazygit = { enabled = false },
     notifier = {},
     picker = {},
     quickfile = {},
     scope = {},
-    scroll = { enabled = false },
     statuscolumn = {},
     words = {},
   },
