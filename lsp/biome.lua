@@ -1,16 +1,6 @@
 -- lsp/biome.lua
 local M = {}
 
--- Capabilities: extend default with nvim-cmp if available
-local caps = vim.lsp.protocol.make_client_capabilities()
-do
-	local ok, cmp = pcall(require, "cmp_nvim_lsp")
-	if ok then
-		caps = cmp.default_capabilities(caps)
-	end
-end
-M.capabilities = caps
-
 -- on_attach: format & fix imports on save via Biome LSP
 M.on_attach = function(client, bufnr)
 	-- Format with Biome on save

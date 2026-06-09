@@ -1,5 +1,4 @@
 return {
-  capabilities = require("cmp_nvim_lsp").default_capabilities(),
   on_attach = function(client, bufnr)
     -- Enable built‑in omnifunc completion
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")

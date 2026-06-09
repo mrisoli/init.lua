@@ -2,10 +2,6 @@
 
 local M = {}
 
--- Capabilities (works with or without nvim-cmp)
-local ok_cmp, cmp = pcall(require, "cmp_nvim_lsp")
-M.capabilities = ok_cmp and cmp.default_capabilities() or vim.lsp.protocol.make_client_capabilities()
-
 -- Root detection using native vim.fs
 local function find_root(fname)
   local patterns = {
@@ -59,37 +55,35 @@ M.on_attach = function(client, bufnr)
 end
 
 -- Server definition for vim.lsp.enable
-M.server = {
-  -- If installed via Mason: eslint-lsp (vscode-langservers-extracted)
-  cmd = { "vscode-eslint-language-server", "--stdio" },
+-- If installed via Mason: eslint-lsp (vscode-langservers-extracted)
+M.cmd = { "vscode-eslint-language-server", "--stdio" }
 
-  -- Filetypes to attach to
-  filetypes = {
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "svelte",
-  },
+-- Filetypes to attach to
+M.filetypes = {
+  "javascript",
+  "javascriptreact",
+  "typescript",
+  "typescriptreact",
+  "vue",
+  "svelte",
+}
 
-  -- Modern root_dir without lspconfig
-  root_dir = function(fname)
-    return find_root(fname)
-  end,
+-- Modern root_dir without lspconfig
+M.root_dir = function(fname)
+  return find_root(fname)
+end
 
-  -- ESLint server settings
-  settings = {
-    -- Resolve eslint/config relative to the file location (prevents -32603 crashes)
-    workingDirectory = { mode = "location" },
+-- ESLint server settings
+M.settings = {
+  -- Resolve eslint/config relative to the file location (prevents -32603 crashes)
+  workingDirectory = { mode = "location" },
 
-    validate = "on",
-    format = false, -- let another tool handle formatting (Biome/Prettier/VTSLS)
-    codeActionOnSave = { enable = true, mode = "all" },
+  validate = "on",
+  format = false, -- let another tool handle formatting (Biome/Prettier/VTSLS)
+  codeActionOnSave = { enable = true, mode = "all" },
 
-    -- Flip to true if your project uses eslint.config.js (flat config, ESLint v9+)
-    experimental = { useFlatConfig = false },
-  },
+  -- Flip to true if your project uses eslint.config.js (flat config, ESLint v9+)
+  experimental = { useFlatConfig = false },
 }
 
 return M
