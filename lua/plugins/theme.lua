@@ -1,7 +1,7 @@
 return {
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"dracula/vim",
+		name = "dracula",
 		lazy = false,
 		priority = 1000,
 	},
